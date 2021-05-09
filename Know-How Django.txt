@@ -1,9 +1,10 @@
 == What is ORM?
 https://www.youtube.com/watch?v=7E1M1W9o7PA
+== What is MVT?
+https://www.youtube.com/watch?v=GGkFg52Ot5o
 == How Django Works?
 https://www.youtube.com/watch?v=M9rtf7icuG0
 == Structure of Django
-https://www.youtube.com/watch?v=GGkFg52Ot5o
 https://www.youtube.com/watch?v=jmX27FrCqqs
 == Why Django, viz Flask
 https://www.youtube.com/watch?v=OZ3K4fK9cAQ
