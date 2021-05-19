@@ -1,2 +1,2 @@
 # djangoLearningTrack
-Files that will track the django learning for anasTripleK
+Files that will track the django learning of anasTripleK for Project-0
