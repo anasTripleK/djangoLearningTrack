@@ -10,6 +10,12 @@
 - Run Command "python -m pip install Django"
 - Check by Running Command "django-admin", shall be the list appeared.
 
+=> Create New Project of Django
+==
+- use "cd foldername" to move forward in folders and
+user "cd.." to go one folder back and locate, where you want to initialize the
+project.
+- Run the Command "django-admin startproject projectName"
 
 => Install Visual Studio Code
 ==
