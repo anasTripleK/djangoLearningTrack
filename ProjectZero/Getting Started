@@ -1,3 +1,7 @@
+NOTE: ALL COMMANDS ARE CONFIGURATIONS ARE FOR WINDOWS
+==
+
+
 => Install Python
 ==
 - Download Python Installer from Internet(Remember to Tick Check PATH)
@@ -10,12 +14,14 @@
 - Run Command "python -m pip install Django"
 - Check by Running Command "django-admin", shall be the list appeared.
 
+
 => Create New Project of Django
 ==
 - use "cd foldername" to move forward in folders and
 user "cd.." to go one folder back and locate, where you want to initialize the
 project.
 - Run the Command "django-admin startproject projectName"
+
 
 => Install Visual Studio Code
 ==
@@ -30,3 +36,19 @@ project.
 - Perform that shortcut in manage.py by placing your cursor at any line
 - It shall pop-up autopep8 to install
 - It is used to format Python Code automatically.
+
+
+=> Run Dummy  Development Server
+==
+- Run in Command line of VS Code "python manage.py runserver"
+- "Ctrl+c" to exit
+
+=> Create Another app.(module) inside a Project
+==
+- Run in Command line of VS Code "python manage.py startapp challenges"
+
+=> Virtual Environment(OPTIONAL)
+==
+- Python virutal environment, to allow python compatibility of each app, inside a Django Project/Python Project
+- https://docs.python.org/3/tutorial/venv.html
+
