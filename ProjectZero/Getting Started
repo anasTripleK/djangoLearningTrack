@@ -1,0 +1,26 @@
+=> Install Python
+==
+- Download Python Installer from Internet(Remember to Tick Check PATH)
+- Check Version by entering 'python' in CMD, shall be the latest
+
+
+=> Install Django
+==
+- Open CMD 
+- Run Command "python -m pip install Django"
+- Check by Running Command "django-admin", shall be the list appeared.
+
+
+=> Install Visual Studio Code
+==
+- Go to Extension
+- Extensions to be installed are "python", "pylance"
+
+
+=> Python Code Formatter(OPTIONAL)
+==
+- Go to Key Board Shortcut
+- Find ShortCut for Format Code
+- Perform that shortcut in manage.py by placing your cursor at any line
+- It shall pop-up autopep8 to install
+- It is used to format Python Code automatically.
