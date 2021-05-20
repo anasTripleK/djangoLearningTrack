@@ -74,7 +74,7 @@ def monthly_views(request, month):
         # Cut-2-cont. :: We can simply call render function. And then we can pass the request to it. With the response as Second Parameter.
         return render(request, "challenges/challenge.html", {
             "eachMonthText": selectedMonth,
-            "eachMonthName": month.capitalize()
+            "eachMonthName": month,  # .capitalize()
         })
         # htmlBindedResponse = render_to_string("challenges/challenge.html", define_dictionary here{
         # "key":"value" #pair
