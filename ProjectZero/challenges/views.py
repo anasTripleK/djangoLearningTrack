@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
+from django.template.loader import render_to_string
 # Create your views here.
 
 months_catalog = {
@@ -67,7 +68,8 @@ def monthly_views_integer_override(request, month):
 def monthly_views(request, month):
     try:
         selectedMonth = months_catalog[month]
-        htmlBindedResponse = f"<h1>{selectedMonth}</h1>"
+        #htmlBindedResponse = f"<h1>{selectedMonth}</h1>"
+        htmlBindedResponse = render_to_string("challenges/challenge.html")
         return HttpResponse(htmlBindedResponse)
     except:
         return HttpResponseNotFound(f"<h1>{'String: Month Not Supported!'}</h1>")

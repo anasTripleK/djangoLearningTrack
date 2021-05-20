@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'challenges',
+    # note: this approach is appreciated for adding templates to the project. doing this, we have registered the app(challenges) with the ProjectZero
+    # note-continue: now django will lookup this app also for the templates
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +57,10 @@ ROOT_URLCONF = 'ProjectZero.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # BASE_DIR / "challenges" / "templates"
+            # note: above approach is manual. it adds the path directory manually(not appreciated)
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
