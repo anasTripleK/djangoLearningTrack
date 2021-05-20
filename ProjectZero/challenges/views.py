@@ -68,8 +68,17 @@ def monthly_views_integer_override(request, month):
 def monthly_views(request, month):
     try:
         selectedMonth = months_catalog[month]
+        # Cut-1
         #htmlBindedResponse = f"<h1>{selectedMonth}</h1>"
-        htmlBindedResponse = render_to_string("challenges/challenge.html")
-        return HttpResponse(htmlBindedResponse)
+        # Cut-2 :: Render Approach: Instead of converting html render-to-string and then rendering.
+        # Cut-2-cont. :: We can simply call render function. And then we can pass the request to it. With the response as Second Parameter.
+        return render(request, "challenges/challenge.html", {
+            "eachMonthText": selectedMonth,
+            "eachMonthName": month.capitalize()
+        })
+        # htmlBindedResponse = render_to_string("challenges/challenge.html", define_dictionary here{
+        # "key":"value" #pair
+        # })
+        # return HttpResponse(htmlBindedResponse)
     except:
         return HttpResponseNotFound(f"<h1>{'String: Month Not Supported!'}</h1>")
