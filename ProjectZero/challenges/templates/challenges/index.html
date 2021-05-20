@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Months for Greetings</title>
+  </head>
+  <body>
+    <ul>
+      {%for month in months%}
+        {% comment %}       Hard Code Url Below        {% endcomment %}
+       {% comment %} <li><a href="/challenges/{{month}}">{{month|title}}</a></li> {% endcomment %}
+
+       {% comment %}    Description: "url" keyword is used to refer Dynamic Link in urls.py folder in DjangoTemplateLanguage     {% endcomment %}
+       {% comment %}        url "dynamicUrlName" argument1 argument2 argumentN         {% endcomment %}
+       <li><a href="{% url "monthsUrl" month %}">{{month|title}}</a></li>
+
+       {% comment %}        or      {% endcomment %}
+       {% comment %} <li><a href="{% url "monthsUrl" month=month %}">{{month|title}}</a></li> {% endcomment %}
+
+       {% comment %}        or      {% endcomment %}
+       {% comment %} <li><a href="{% url "monthsUrl" arg1=month arg2=ifAny %}">{{month|title}}</a></li> {% endcomment %}
+      {% endfor %}
+    </ul>
+  </body>
+</html>

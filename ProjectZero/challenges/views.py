@@ -25,15 +25,19 @@ def errorResponse():
 
 
 def index(request):
-    list_to_show = ""
-    listOfMonths = list(months_catalog.keys())
+    try:
+        #list_to_show = ""
+        listOfMonths = list(months_catalog.keys())
+        # for eachMonth in listOfMonths:
+        #     urlToMonthPath = reverse("monthsUrl", args=[eachMonth])
+        #     list_to_show += f"<li><a href=\"{urlToMonthPath}\">{eachMonth.capitalize()}</a></li>"
 
-    for eachMonth in listOfMonths:
-        urlToMonthPath = reverse("monthsUrl", args=[eachMonth])
-        list_to_show += f"<li><a href=\"{urlToMonthPath}\">{eachMonth.capitalize()}</a></li>"
-
-    htmlResponseForDefaultPath = f"<ul>{list_to_show}</ul>"
-    return HttpResponse(htmlResponseForDefaultPath)
+        # htmlResponseForDefaultPath = f"<ul>{list_to_show}</ul>"
+        return render(request, "challenges/index.html", {
+            "months": listOfMonths
+        })
+    except:
+        return HttpResponseNotFound("Challenges Not Found")
 
 
 def monthly_views_integer_override(request, month):
