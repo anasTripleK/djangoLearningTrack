@@ -19,6 +19,10 @@ months_catalog = {
 }
 
 
+def errorResponse():
+    return HttpResponseNotFound(f"<h1>Invalid URL</h1>")
+
+
 def index(request):
     list_to_show = ""
     listOfMonths = list(months_catalog.keys())
