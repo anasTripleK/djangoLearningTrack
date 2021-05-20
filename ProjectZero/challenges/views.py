@@ -1,6 +1,5 @@
-from django.http.response import HttpResponseNotFound
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 # Create your views here.
 
 months_catalog = {
@@ -15,24 +14,30 @@ months_catalog = {
     "septmeber": "Hey, its September. Practice Urls ;)",
     "october": "Hey, its October. Practice Urls ;)",
     "november": "Hey, its November. Practice Urls ;)",
-    "december": "Hey, its December. Practice Urls ;)",
+    "december": "Hey, its December. Practice Urls ;)"
 }
 
 
 def monthly_views_integer_override(request, month):
+    # Redirecting Techniques
 
-    textData = None
-
-    if (month == 1):
-        textData = "Hey, its January. Practice Urls ;)"
-    elif (month == 2):
-        textData = "Hey, its February. Practice Urls ;)"
-    elif (month == 3):
-        textData = "Hey, its March. Practice Urls ;)"
+    # Redirect technique-1
+    listOfMonths = list(months_catalog.keys())
+    if(month != 0):
+        targetValue = listOfMonths[month-1]
+        return monthly_views(request, targetValue)
     else:
-        return HttpResponseNotFound("Integer: Month Not Supported!")
+        return HttpResponseNotFound("Integer: Invalid Month!")
 
-    return HttpResponse(textData)
+    # Redirect technique-2
+    # try:
+    #     if(month != 0):
+    #         targetValue = listOfMonths[month-1]
+    #         return HttpResponseRedirect('/challenges/'+targetValue)
+    #     else:
+    #         return HttpResponseNotFound("Integer: Invalid Month!")
+    # except:
+    #     return HttpResponseNotFound("Integer: Invalid Month!")
 
 
 def monthly_views(request, month):
