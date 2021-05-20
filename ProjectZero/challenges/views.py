@@ -19,6 +19,18 @@ months_catalog = {
 }
 
 
+def index(request):
+    list_to_show = ""
+    listOfMonths = list(months_catalog.keys())
+
+    for eachMonth in listOfMonths:
+        urlToMonthPath = reverse("monthsUrl", args=[eachMonth])
+        list_to_show += f"<li><a href=\"{urlToMonthPath}\">{eachMonth.capitalize()}</a></li>"
+
+    htmlResponseForDefaultPath = f"<ul>{list_to_show}</ul>"
+    return HttpResponse(htmlResponseForDefaultPath)
+
+
 def monthly_views_integer_override(request, month):
     # Redirecting Techniques
 
@@ -43,13 +55,15 @@ def monthly_views_integer_override(request, month):
 
             return HttpResponseRedirect(urlToRedirect)
         else:
-            return HttpResponseNotFound("Integer: Invalid Month!")
+            return HttpResponseNotFound(f"<h1>{'Integer: Month Not Supported!'}</h1>")
     except:
-        return HttpResponseNotFound("Integer: Invalid Month!")
+        return HttpResponseNotFound(f"<h1>{'Integer: Month Not Supported!'}</h1>")
 
 
 def monthly_views(request, month):
     try:
-        return HttpResponse(months_catalog[month])
+        selectedMonth = months_catalog[month]
+        htmlBindedResponse = f"<h1>{selectedMonth}</h1>"
+        return HttpResponse(htmlBindedResponse)
     except:
-        return HttpResponseNotFound("String: Month Not Supported!")
+        return HttpResponseNotFound(f"<h1>{'String: Month Not Supported!'}</h1>")
