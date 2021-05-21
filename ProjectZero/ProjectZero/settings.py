@@ -60,6 +60,9 @@ TEMPLATES = [
         'DIRS': [
             # BASE_DIR / "challenges" / "templates"
             # note: above approach is manual. it adds the path directory manually(not appreciated)
+
+            # note: Below expression is added, so that Django looks into templates folder of ProjectZero as well as challenges app for html views
+            BASE_DIR / "templates"
         ],
         'APP_DIRS': True,
         'OPTIONS': {
