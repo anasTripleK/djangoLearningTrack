@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 
 months_catalog = {
     "january": "Hey, its January. Practice Urls ;)",
-    "february": "Hey, its February. Practice Urls ;)",
+    "february": None,
     "march": "Hey, its March. Practice Urls ;)",
     "april": "Hey, its April. Practice Urls ;)",
     "may": "Hey, its May. Practice Urls ;)",

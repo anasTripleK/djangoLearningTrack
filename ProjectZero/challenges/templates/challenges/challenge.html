@@ -8,6 +8,15 @@
   </head>
   <body>
     <h1>Greetings from {{eachMonthName|capfirst}}</h1>
+
+    {%if eachMonthText is not None %}
+
     <h2>{{eachMonthText}}</h2>
+
+    {% else %}
+
+    <p>This month donot describes anything</p>
+
+    {%endif%}
   </body>
 </html>
