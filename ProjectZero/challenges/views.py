@@ -1,3 +1,4 @@
+from django.http.response import Http404
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
@@ -85,4 +86,13 @@ def monthly_views(request, month):
         # })
         # return HttpResponse(htmlBindedResponse)
     except:
-        return HttpResponseNotFound(f"<h1>{'String: Month Not Supported!'}</h1>")
+        #1
+        # return HttpResponseNotFound(f"<h1>{'String: Month Not Supported!'}</h1>")
+
+        #2
+        #dataToRender=render_to_string("404.html")
+        #return HttpResponseNotFound(dataToRender)
+
+        #3(Appreciated Method)
+        raise Http404()
+        #Put DEBUG=False for making your 404.html render
