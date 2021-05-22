@@ -12,12 +12,15 @@
   
 {%block page_heading%}
 
+    {% include "./includes/header.html" with active_page="Hey! its challenge.html" %}
+
   Greetings from {{eachMonthName|capfirst}}
 
 {%endblock%}
 
 
 {%block content%}
+
 
   {%if eachMonthText is not None %}
 

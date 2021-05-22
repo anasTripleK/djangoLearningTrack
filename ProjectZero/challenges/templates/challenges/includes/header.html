@@ -1,0 +1,7 @@
+<header>
+    <nav>
+        <a href="{% url "index" %}">All Challenges</a>
+        {% comment %} {{eachMonthName}} can be accessed here. But, it scope will be, when header renders the file that had this variable in it. That is, it will work for challenge.html but not for index.html {% endcomment %}
+        {{active_page}}
+    </nav>
+</header>

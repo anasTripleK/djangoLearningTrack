@@ -9,6 +9,10 @@
   {% endblock %}
   
   {%block content%}
+    {% include "./includes/header.html" with active_page="Hey! its index.html" %}
+    {% comment %} absolute valid path below {% endcomment %}
+    {% comment %} challenges/includes/header.html {% endcomment %}
+
     <ul>
       {%for month in months%}
         {% comment %}       Hard Code Url Below        {% endcomment %}
