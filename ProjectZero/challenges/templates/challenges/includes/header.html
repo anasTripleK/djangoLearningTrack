@@ -2,6 +2,7 @@
     <nav>
         <a href="{% url "index" %}">All Challenges</a>
         {% comment %} {{eachMonthName}} can be accessed here. But, it scope will be, when header renders the file that had this variable in it. That is, it will work for challenge.html but not for index.html {% endcomment %}
-        {{active_page}}
+        {% comment %} below is the active_page variable that is coming from parent in which header.html is being included using "with" keyword {% endcomment %}
+        {% comment %} {{active_page}} {% endcomment %}
     </nav>
 </header>
