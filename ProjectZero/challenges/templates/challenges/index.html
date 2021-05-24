@@ -3,6 +3,7 @@
 
 {% block css_files%}
 <link rel="stylesheet" href="{% static "challenges/challenges.css" %}">
+<link rel="stylesheet" href="{% static "challenges/includes/header.css" %}">
 {%endblock%}
 
   {%block page_title%}
@@ -14,7 +15,8 @@
   {% endblock %}
   
   {%block content%}
-    {% include "./includes/header.html" with active_page="Hey! its index.html" %}
+    {% include "./includes/header.html" %}
+    {% comment %} {% include "./includes/header.html" with active_page="Hey! its index.html" %} {% endcomment %}
     {% comment %} absolute valid path below {% endcomment %}
     {% comment %} challenges/includes/header.html {% endcomment %}
 
