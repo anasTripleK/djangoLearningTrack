@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static%}
+{% load static %}
 
 {% block css_files%}
 <link rel="stylesheet" href="{% static "challenges/challenges.css" %}">
@@ -10,12 +10,14 @@
   All Months
   {% endblock %}
 
-  {%block page_heading%}
+  {% comment %} {%block page_heading%}
   List of Months
-  {% endblock %}
+  {% endblock %} {% endcomment %}
   
   {%block content%}
-    {% include "./includes/header.html" %}
+    {% include "challenges/includes/header.html" %}
+    {% comment %} {% include "./includes/header.html" %} {% endcomment %}
+    
     {% comment %} {% include "./includes/header.html" with active_page="Hey! its index.html" %} {% endcomment %}
     {% comment %} active_page is a variable that is being rendered in the header.html and is sent as a special/customized variable from index.html for header.html {% endcomment %}
     {% comment %} absolute valid path below {% endcomment %}
