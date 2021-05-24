@@ -1,5 +1,4 @@
 
 urlpatterns = [
-    path(''),
-    path('/')
+    #path(''),
 ]
