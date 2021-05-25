@@ -1,7 +1,12 @@
 {%extends "base.html"%}
+{% load static%}
 
 {% block title%}
 My Blog
+{%endblock%}
+
+{%block css_files%}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}"
 {%endblock%}
 
 {%block content%}
@@ -14,7 +19,7 @@ My Blog
 
 <section id="welcome">
     <header>
-        <img src="" alt="Anas - The Author of This Blog"/>
+        <img src="{% static "blog/images/max.png"%}" alt="Anas - The Author of This Blog"/>
         <h2>ANAS'S BLOG</h2>
     </header>
     <p>Hi, I am Anas. And I am a digital enthusiast</P>
@@ -26,7 +31,7 @@ My Blog
         <li>
             <article class="post">
                 <a href="">
-                    <img src="" alt="Mountain Hiking"/>
+                    <img src="{%static "blog/images/mountains.jpg"%}" alt="Mountain Hiking"/>
                     <div class="post__content">
                         <h3>Mountain Hiking</h3>
                         <p>
