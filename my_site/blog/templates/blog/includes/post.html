@@ -5,9 +5,10 @@
                     <img src="{%static "blog/images/mountains.jpg"%}" alt="Mountain Hiking"/>
                     <div class="post__content">
                     {% comment %} In template post['title'] EQUALS post.title {% endcomment %}
-                        <h3>{{posts.title}}</h3>
+                    {% comment %} each_post is coming from index.html, where post.html was loaded {% endcomment %}
+                        <h3>{{each_post.title}}</h3>
                         <p>
-                            {{posts.excerpt}}
+                            {{each_post.excerpt}}
                         </p>
                     </div>
                 </a>
