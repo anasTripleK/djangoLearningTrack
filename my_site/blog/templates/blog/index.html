@@ -24,10 +24,13 @@ My Blog
 <section id="lastest-posts">
     <h2>My Latest Thoughts</h2>
     <ul>
-        {% include "blog/includes/post.html" %}
+        {% comment %} we are gettting below variable "posts" from views {% endcomment %}
+        {% for each_post in posts %}
+            {% include "blog/includes/post.html" %}
+        {% endfor %}
     </ul>
 </section>
-<section>
+<section id="about">
     <h2>What I Do</h2>
     <p>
         I love programming, I love to help others and I enjoy exploring new

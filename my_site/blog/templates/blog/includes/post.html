@@ -4,11 +4,10 @@
                 <a href="{% url "post-detail-page" slug="the-mountains" %}">
                     <img src="{%static "blog/images/mountains.jpg"%}" alt="Mountain Hiking"/>
                     <div class="post__content">
-                        <h3>Mountain Hiking</h3>
+                    {% comment %} In template post['title'] EQUALS post.title {% endcomment %}
+                        <h3>{{posts.title}}</h3>
                         <p>
-                        There's nothing like the views you get when hiking in the
-                        mountains! And I wasn't even prepared for what happened whilst I
-                        was enjoying the view!
+                            {{posts.excerpt}}
                         </p>
                     </div>
                 </a>
